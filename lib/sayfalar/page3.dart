@@ -33,7 +33,9 @@ class _page3State extends State<page3> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             var ayarlarListesi = snapshot.data;
-            return ListView();
+            return ListView(
+                //Listview tasarımı yapılacak
+                );
           } else {
             return Center();
           }
