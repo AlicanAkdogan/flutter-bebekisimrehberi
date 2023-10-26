@@ -85,6 +85,7 @@ class _page1State extends State<page1> {
                                 ),
                               ),
                               IconButton(
+                                //Fav İcon button
                                 icon: Icon(Icons.favorite,
                                     color: isim.name_fav == '0'
                                         ? Colors.black
