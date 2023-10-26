@@ -14,7 +14,7 @@ class _page3State extends State<page3> {
 
     var a1 = Ayarlar(1, "Contact", "contact.png");
     var a2 = Ayarlar(2, "İnformation", "information.png");
-    var a3 = Ayarlar(3, "Star", "Star.png");
+    var a3 = Ayarlar(3, "Star", "star.png");
 
     ayarlarList.add(a1);
     ayarlarList.add(a2);
@@ -41,7 +41,40 @@ class _page3State extends State<page3> {
               itemCount: ayarlarListesi!.length,
               itemBuilder: (context, index) {
                 var ayar = ayarlarListesi[index];
-                //Row veya colum ile tarım eklenecektir.
+                return GestureDetector(
+                  onTap: () {
+                    print("object");
+                  },
+                  child: SizedBox(
+                    height: 100,
+                    child: Card(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 50,
+                            width: 50,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Image.asset(
+                                "resimler/${ayar.ayar_icon}",
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Text(
+                              ayar.ayar_ad,
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
               },
             );
           } else {
