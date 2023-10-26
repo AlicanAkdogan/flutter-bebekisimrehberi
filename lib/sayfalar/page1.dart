@@ -61,7 +61,7 @@ class _page1State extends State<page1> {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
+                            children: <Widget>[
                               Padding(
                                 padding: const EdgeInsets.only(right: 15),
                                 child: ElevatedButton(
@@ -83,6 +83,28 @@ class _page1State extends State<page1> {
                                     }
                                   },
                                 ),
+                              ),
+                              IconButton(
+                                icon: Icon(Icons.favorite,
+                                    color: isim.name_fav == '0'
+                                        ? Colors.black
+                                        : Colors.red),
+                                onPressed: () {
+                                  setState(() {
+                                    if (isim.name_fav == "0") {
+                                      //print("Favori 1");
+
+                                      fav(isim.name_id, "1");
+                                      print("${isim.name} Favoriye Eklendi");
+                                    } else if (isim.name_fav == "1") {
+                                      //print("Favori 2");
+                                      fav(isim.name_id, "0");
+                                      print("${isim.name} Favoriden Çıkarıldı");
+                                    } else {
+                                      print("Bilinmedik bir hat oluştu");
+                                    }
+                                  });
+                                },
                               )
                             ],
                           ),
