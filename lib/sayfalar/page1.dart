@@ -62,7 +62,8 @@ class _page1State extends State<page1> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: <Widget>[
-                              Padding(
+                              //t2
+                              /*Padding(
                                 padding: const EdgeInsets.only(right: 15),
                                 child: ElevatedButton(
                                   child: Text("Deneme"),
@@ -83,9 +84,9 @@ class _page1State extends State<page1> {
                                     }
                                   },
                                 ),
-                              ),
+                              ),*/
                               IconButton(
-                                //Fav İcon button eklendi
+                                //Fav İcon button eklendi.
                                 icon: Icon(Icons.favorite,
                                     color: isim.name_fav == '0'
                                         ? Colors.black
