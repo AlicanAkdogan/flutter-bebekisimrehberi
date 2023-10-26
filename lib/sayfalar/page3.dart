@@ -12,9 +12,11 @@ class _page3State extends State<page3> {
   Future<List<Ayarlar>> tumAyarlariGoster() async {
     var ayarlarList = <Ayarlar>[];
 
-    var a1 = Ayarlar(1, "Uygulamamızı Değerlendir", "star.png");
-    var a2 = Ayarlar(2, "Uygulama Sürümü", "information.png");
-    var a3 = Ayarlar(3, "İletişim", "contact.png");
+
+    var a1 = Ayarlar(1, "Contact", "contact.png");
+    var a2 = Ayarlar(2, "İnformation", "information.png");
+    var a3 = Ayarlar(3, "Star", "star.png");
+
 
     ayarlarList.add(a1);
     ayarlarList.add(a2);
@@ -36,37 +38,44 @@ class _page3State extends State<page3> {
         future: tumAyarlariGoster(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            var ayarList = snapshot.data;
+
+            var ayarlarListesi = snapshot.data;
             return ListView.builder(
-              itemCount: ayarList!.length,
+              itemCount: ayarlarListesi!.length,
               itemBuilder: (context, index) {
-                var ayar = ayarList[index];
+                var ayar = ayarlarListesi[index];
                 return GestureDetector(
                   onTap: () {
-                    if (index == 0) {
-                      print("111");
-                    } else if (index == 1) {
-                      print("222");
-                    } else if (index == 2) {
-                      print("333");
-                    }
+                    print("object");
                   },
-                  child: Card(
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SizedBox(
-                            width: 50,
+                  child: SizedBox(
+                    height: 100,
+                    child: Card(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
                             height: 50,
-                            child: Image.asset("resimler/${ayar.ayar_icon}"),
+                            width: 50,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Image.asset(
+                                "resimler/${ayar.ayar_icon}",
+                                color: Colors.black,
+                              ),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(10, 1, 1, 1),
-                          child: Text("${ayar.ayar_ad}"),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Text(
+                              ayar.ayar_ad,
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+
                     ),
                   ),
                 );
