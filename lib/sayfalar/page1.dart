@@ -12,7 +12,6 @@ class page1 extends StatefulWidget {
 class _page1State extends State<page1> {
   Future<List<Name>> tumIsimleriGoster() async {
     var isimlerListesi = await Namedao().tumIsimler();
-
     return isimlerListesi;
   }
 
@@ -25,7 +24,7 @@ class _page1State extends State<page1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Color.fromRGBO(255, 196, 216, 1),
         title: Text("Popüler Bebek İsimleri"),
       ),
       body: FutureBuilder<List<Name>>(

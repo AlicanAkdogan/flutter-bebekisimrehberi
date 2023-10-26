@@ -12,9 +12,11 @@ class _page3State extends State<page3> {
   Future<List<Ayarlar>> tumAyarlariGoster() async {
     var ayarlarList = <Ayarlar>[];
 
+
     var a1 = Ayarlar(1, "Contact", "contact.png");
     var a2 = Ayarlar(2, "İnformation", "information.png");
     var a3 = Ayarlar(3, "Star", "star.png");
+
 
     ayarlarList.add(a1);
     ayarlarList.add(a2);
@@ -36,6 +38,7 @@ class _page3State extends State<page3> {
         future: tumAyarlariGoster(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
+
             var ayarlarListesi = snapshot.data;
             return ListView.builder(
               itemCount: ayarlarListesi!.length,
@@ -72,12 +75,14 @@ class _page3State extends State<page3> {
                           ),
                         ],
                       ),
+
                     ),
                   ),
                 );
               },
             );
           } else {
+            print("Veri Gelmedi");
             return Center();
           }
         },
